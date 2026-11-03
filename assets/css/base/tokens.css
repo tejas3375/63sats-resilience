@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Design tokens
+   Swap these values for the official 63SATS brand palette when available.
+   Components should only ever reference tokens, never raw hex values.
+   ========================================================================== */
+
+:root {
+  /* Brand palette -------------------------------------------------------- */
+  --color-ink:          #0E1B2C;  /* primary text, dark bands            */
+  --color-ink-soft:     #3A4A5E;  /* secondary text                      */
+  --color-ink-muted:    #66768A;  /* captions, meta                      */
+  --color-paper:        #F3F5F7;  /* page background                     */
+  --color-surface:      #FFFFFF;  /* raised panels, forms                */
+  --color-line:         #D3DAE2;  /* borders, dividers                   */
+  --color-line-strong:  #A9B5C3;
+
+  --color-orbit:        #2B59C3;  /* primary accent, links, actions      */
+  --color-orbit-deep:   #1D3F8F;  /* hover / pressed                     */
+  --color-orbit-tint:   #E3EAF8;  /* selected backgrounds                */
+
+  --color-signal:       #E8A33D;  /* risk, threat, warnings only         */
+  --color-signal-deep:  #8A5A12;
+  --color-safe:         #1F8A7A;  /* recovery, success states            */
+  --color-danger:       #B4322A;  /* form errors                         */
+
+  /* Dark band (used by .section--dark) */
+  --color-night:        #0E1B2C;
+  --color-night-raised: #17283E;
+  --color-night-line:   #2C3F57;
+  --color-night-text:   #E7ECF2;
+  --color-night-muted:  #9AAABD;
+
+  /* Typography ----------------------------------------------------------- */
+  --font-display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Source Sans 3", "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Modular scale (1.25) — rem based, 16px root */
+  --text-xs:   0.8rem;
+  --text-sm:   0.9rem;
+  --text-base: 1.0625rem;
+  --text-md:   1.25rem;
+  --text-lg:   1.5625rem;
+  --text-xl:   1.953rem;
+  --text-2xl:  2.441rem;
+  --text-3xl:  clamp(2.25rem, 1.6rem + 2.6vw, 3.6rem);
+
+  --leading-tight: 1.12;
+  --leading-snug:  1.3;
+  --leading-body:  1.6;
+
+  /* Spacing (4px base) --------------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  --section-pad: clamp(3.5rem, 2.5rem + 4vw, 6.5rem);
+
+  /* Layout --------------------------------------------------------------- */
+  --container-max: 1200px;
+  --container-gutter: clamp(1rem, 0.5rem + 2vw, 2rem);
+  --measure: 66ch;
+
+  --header-height: 72px;
+  --utility-height: 36px;
+  --section-nav-height: 52px;
+
+  /* Shape & depth -------------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  --shadow-panel: 0 18px 40px -18px rgba(14, 27, 44, 0.28);
+
+  /* Motion --------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 240ms;
+
+  /* Layers --------------------------------------------------------------- */
+  --z-section-nav: 40;
+  --z-header: 50;
+  --z-menu: 60;
+  --z-cookie: 70;
+  --z-modal: 80;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
+}

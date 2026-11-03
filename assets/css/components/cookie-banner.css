@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Cookie banner — bottom-left card, shown once per browser
+   ========================================================================== */
+
+.cookie-banner {
+  position: fixed;
+  left: var(--container-gutter);
+  right: var(--container-gutter);
+  bottom: var(--container-gutter);
+  z-index: var(--z-cookie);
+  display: grid;
+  gap: var(--space-4);
+  max-width: 440px;
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-panel);
+  font-size: var(--text-sm);
+}
+
+.cookie-banner p {
+  color: var(--color-ink-soft);
+}

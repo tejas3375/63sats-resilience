@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Mega menu panels
+   Desktop: full-width panel under the header row.
+     [ intro ] [ group | group | group ... ] [ feature card ]
+   Mobile: the same panel expands inline inside the drawer.
+   ========================================================================== */
+
+.mega-menu {
+  background: var(--color-surface);
+}
+
+.mega-menu__title {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+}
+
+.mega-menu__text {
+  margin-top: var(--space-2);
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+}
+
+.mega-menu__group-title {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-ink-muted);
+}
+
+.mega-menu__list {
+  display: grid;
+  gap: var(--space-1);
+  list-style: none;
+  padding: 0;
+}
+
+.mega-menu__link {
+  display: grid;
+  gap: 2px;
+  padding: var(--space-2) var(--space-3);
+  margin-inline: calc(-1 * var(--space-3));
+  border-radius: var(--radius-md);
+  text-decoration: none;
+}
+
+.mega-menu__link:hover {
+  background: var(--color-orbit-tint);
+}
+
+.mega-menu__link-label {
+  font-weight: 600;
+  line-height: var(--leading-snug);
+}
+
+.mega-menu__link:hover .mega-menu__link-label {
+  color: var(--color-orbit-deep);
+}
+
+.mega-menu__link-desc {
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+  line-height: var(--leading-snug);
+}
+
+.mega-menu__feature {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-ink);
+  color: var(--color-night-text);
+  border-radius: var(--radius-lg);
+}
+
+.mega-menu__feature-title {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+}
+
+.mega-menu__feature-text {
+  font-size: var(--text-sm);
+  color: var(--color-night-muted);
+}
+
+.mega-menu__feature .button {
+  justify-self: start;
+}
+
+/* Desktop ---------------------------------------------------------------- */
+
+@media (min-width: 1080px) {
+  .mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: var(--z-menu);
+    border-bottom: 1px solid var(--color-line);
+    box-shadow: var(--shadow-panel);
+  }
+
+  .mega-menu__inner {
+    display: grid;
+    grid-template-columns: minmax(200px, 240px) 1fr auto;
+    gap: var(--space-7);
+    padding-block: var(--space-6) var(--space-7);
+  }
+
+  .mega-menu__groups {
+    display: grid;
+    grid-template-columns: repeat(min(var(--group-count), 3), minmax(0, 1fr));
+    gap: var(--space-6) var(--space-6);
+  }
+
+  .mega-menu__feature {
+    width: 260px;
+  }
+}
+
+/* Mobile ----------------------------------------------------------------- */
+
+@media (max-width: 1079.98px) {
+  .mega-menu__inner {
+    display: grid;
+    gap: var(--space-5);
+    padding: 0 0 var(--space-5);
+  }
+
+  /* Containers inside the drawer already sit inside the gutter */
+  .mega-menu .container {
+    padding-inline: 0;
+  }
+
+  .mega-menu__intro {
+    display: none;
+  }
+
+  .mega-menu__groups {
+    display: grid;
+    gap: var(--space-5);
+  }
+}

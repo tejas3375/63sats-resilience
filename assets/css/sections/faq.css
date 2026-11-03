@@ -1,0 +1,22 @@
+/* ==========================================================================
+   FAQ — heading left, accordion right on wide screens
+   ========================================================================== */
+
+.faq__inner {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 960px) {
+  .faq__inner {
+    grid-template-columns: 1fr 1.8fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .faq .section-header {
+    position: sticky;
+    top: calc(var(--header-height) + var(--section-nav-height) + var(--space-6));
+    margin-bottom: 0;
+  }
+}

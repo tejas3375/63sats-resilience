@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Buttons
+   .button                   base
+   .button--primary          filled orbit blue
+   .button--secondary        outlined
+   .button--ghost-light      outlined, for dark bands
+   .button--small            compact size
+   ========================================================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 46px;
+  padding: 0 var(--space-5);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.button--primary {
+  background: var(--color-orbit);
+  color: #fff;
+}
+
+.button--primary:hover {
+  background: var(--color-orbit-deep);
+}
+
+.button--secondary {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.button--secondary:hover {
+  background: var(--color-ink);
+  color: var(--color-surface);
+}
+
+.button--ghost-light {
+  border-color: var(--color-night-line);
+  color: var(--color-night-text);
+}
+
+.button--ghost-light:hover {
+  border-color: var(--color-night-text);
+}
+
+.button--small {
+  min-height: 38px;
+  padding: 0 var(--space-4);
+  font-size: var(--text-sm);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}

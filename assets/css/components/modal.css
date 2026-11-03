@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Modal — native <dialog class="modal">
+   ========================================================================== */
+
+.modal {
+  width: min(520px, calc(100vw - 2 * var(--container-gutter)));
+  max-height: calc(100vh - 2 * var(--space-6));
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-panel);
+}
+
+.modal::backdrop {
+  background: rgba(14, 27, 44, 0.55);
+}
+
+.modal__header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-6) 0;
+}
+
+.modal__title {
+  font-size: var(--text-lg);
+}
+
+.modal__intro {
+  margin-top: var(--space-2);
+  color: var(--color-ink-soft);
+}
+
+.modal__close {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-md);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.modal__close:hover {
+  background: var(--color-paper);
+}
+
+.modal__body {
+  padding: var(--space-5) var(--space-6) var(--space-6);
+}

@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Outcomes — four columns, metric on top
+   ========================================================================== */
+
+.outcomes__list {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .outcomes__list { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1040px) {
+  .outcomes__list { grid-template-columns: repeat(4, 1fr); }
+}
+
+.outcomes__item {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+}
+
+.outcomes__metric {
+  justify-self: start;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-safe);
+}
+
+.outcomes__item p:last-child {
+  color: var(--color-ink-soft);
+}

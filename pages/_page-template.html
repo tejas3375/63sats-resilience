@@ -1,0 +1,76 @@
+<!doctype html>
+<!--
+  PAGE TEMPLATE
+  1. Copy this file to the path used in assets/js/data/navigation.js
+     (e.g. pages/services/incident-response.html).
+  2. Update <title>, meta description and the page hero.
+  3. Add sections inside <main>. Reuse classes from assets/css/base/layout.css
+     (.section, .section--surface, .section--dark, .section-header).
+  4. Page-specific styles go in assets/css/sections/<name>.css, imported
+     from assets/css/main.css.
+  Header and footer render automatically from the navigation data.
+-->
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Page title | 63SATS Cyber Resilience</title>
+  <meta name="description" content="One-sentence summary of this page.">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script type="module" src="/assets/js/main.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header data-component="site-header"></header>
+
+  <main id="main">
+
+    <!-- Page hero -->
+    <section class="hero" aria-labelledby="page-title">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title" id="page-title">Page title</h1>
+          <p class="lead">Short description of what this page offers.</p>
+          <div class="button-row">
+            <a class="button button--primary" href="/#contact">Book a resilience review</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optional: in-page nav. Remove if the page is short.
+    <nav class="section-nav" aria-label="On this page" data-section-nav>
+      <div class="container">
+        <ul class="section-nav__list" role="list" data-section-nav-scroller>
+          <li><a class="section-nav__link" href="#section-one">Section one</a></li>
+        </ul>
+      </div>
+    </nav>
+    -->
+
+    <!-- Section -->
+    <section class="section" id="section-one" aria-labelledby="section-one-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="section-one-title">Section heading</h2>
+          <p class="lead">Section introduction.</p>
+        </header>
+        <!-- Section content -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer data-component="site-footer"></footer>
+</body>
+</html>

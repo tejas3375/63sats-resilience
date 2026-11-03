@@ -1,0 +1,50 @@
+/* ==========================================================================
+   In-page section navigation
+   Sticky bar under the header. Scrolls horizontally on small screens.
+   Active state is set by js/modules/section-nav.js.
+   ========================================================================== */
+
+.section-nav {
+  position: sticky;
+  top: var(--header-height);
+  z-index: var(--z-section-nav);
+  background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.section-nav__list {
+  position: relative; /* offset parent for scroll-into-view maths */
+  display: flex;
+  gap: var(--space-1);
+  height: var(--section-nav-height);
+  overflow-x: auto;
+  scrollbar-width: none;
+  list-style: none;
+}
+
+.section-nav__list::-webkit-scrollbar {
+  display: none;
+}
+
+.section-nav__link {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+
+.section-nav__link:hover {
+  color: var(--color-ink);
+}
+
+.section-nav__link.is-active {
+  color: var(--color-orbit);
+  border-bottom-color: var(--color-orbit);
+}

@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Resources — three linked rows
+   ========================================================================== */
+
+.resources__list {
+  display: grid;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 900px) {
+  .resources__list { grid-template-columns: repeat(3, 1fr); }
+}
+
+.resources__item {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  padding-top: var(--space-4);
+  border-top: 2px solid var(--color-ink);
+}
+
+.resources__type {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-orbit);
+}
+
+.resources__item h3 a {
+  text-decoration: none;
+}
+
+.resources__item h3 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.resources__meta {
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+}

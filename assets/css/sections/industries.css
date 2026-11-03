@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Industries — tabs with three-column panels
+   ========================================================================== */
+
+.industries__panel:not([hidden]) {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 900px) {
+  .industries__panel:not([hidden]) {
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: var(--space-7);
+  }
+}
+
+.industries__col {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+}
+
+.industries__col h3 {
+  font-size: var(--text-base);
+  color: var(--color-ink-muted);
+}
+
+.industries__col p {
+  color: var(--color-ink-soft);
+}
+
+.industries__regs {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.industries__regs li {
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-paper);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.industries__col .link {
+  justify-self: start;
+}

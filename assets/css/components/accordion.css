@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Accordion — native <details>/<summary>
+   Give sibling <details> the same name="" to allow only one open at a time.
+   ========================================================================== */
+
+.accordion {
+  border-top: 1px solid var(--color-line);
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.accordion__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding: var(--space-5) 0;
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  cursor: pointer;
+  list-style: none;
+}
+
+.accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Plus / minus indicator */
+.accordion__summary::after {
+  content: "";
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  background:
+    linear-gradient(currentColor, currentColor) center / 14px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 2px 14px no-repeat;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.accordion__item[open] > .accordion__summary::after {
+  background: linear-gradient(currentColor, currentColor) center / 14px 2px no-repeat;
+}
+
+.accordion__summary:hover {
+  color: var(--color-orbit);
+}
+
+.accordion__body {
+  max-width: var(--measure);
+  padding-bottom: var(--space-5);
+  color: var(--color-ink-soft);
+}

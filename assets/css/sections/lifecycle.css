@@ -1,0 +1,185 @@
+/* ==========================================================================
+   Resilience lifecycle — the orbit
+   Six tab buttons are placed around a ring using their inline --angle.
+   Positioning uses container query units so the ring scales with width.
+
+   [   orbit with 6 stage buttons   ]  [ selected stage panel ]
+   ========================================================================== */
+
+.lifecycle__layout {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .lifecycle__layout {
+    grid-template-columns: minmax(380px, 480px) 1fr;
+    gap: var(--space-8);
+  }
+}
+
+/* Orbit ------------------------------------------------------------------ */
+
+.lifecycle__orbit {
+  --orbit-radius: 38cqi;
+  position: relative;
+  container-type: inline-size;
+  width: min(100%, 480px);
+  aspect-ratio: 1;
+  justify-self: center;
+}
+
+/* The ring */
+.lifecycle__orbit::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border: 1.5px dashed var(--color-line-strong);
+  border-radius: 50%;
+}
+
+.lifecycle__core {
+  position: absolute;
+  inset: 34%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: var(--color-ink);
+  color: var(--color-night-text);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(0.8rem, 3.6cqi, 1.05rem);
+  line-height: 1.2;
+}
+
+.lifecycle__tabs {
+  position: absolute;
+  inset: 0;
+}
+
+.lifecycle__tab {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-1);
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--angle))
+    translateY(calc(-1 * var(--orbit-radius)))
+    rotate(calc(-1 * var(--angle)));
+}
+
+.lifecycle__tab-step {
+  display: grid;
+  place-items: center;
+  width: clamp(36px, 11cqi, 52px);
+  height: clamp(36px, 11cqi, 52px);
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-line-strong);
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-ink-soft);
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+}
+
+.lifecycle__tab-name {
+  padding: 0 var(--space-2);
+  background: var(--color-paper);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: clamp(0.8rem, 3.4cqi, 0.95rem);
+  color: var(--color-ink-soft);
+}
+
+.lifecycle__tab:hover .lifecycle__tab-step {
+  border-color: var(--color-orbit);
+  color: var(--color-orbit);
+}
+
+.lifecycle__tab[aria-selected="true"] .lifecycle__tab-step {
+  background: var(--color-orbit);
+  border-color: var(--color-orbit);
+  color: #fff;
+  transform: scale(1.15);
+}
+
+.lifecycle__tab[aria-selected="true"] .lifecycle__tab-name {
+  color: var(--color-ink);
+}
+
+/* Focus ring sits on the circle, not the whole rotated box */
+.lifecycle__tab:focus-visible {
+  outline: none;
+}
+
+.lifecycle__tab:focus-visible .lifecycle__tab-step {
+  outline: 3px solid var(--color-orbit);
+  outline-offset: 3px;
+}
+
+/* Panels ----------------------------------------------------------------- */
+
+.lifecycle__panel {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 56ch;
+}
+
+.lifecycle__panel:focus-visible {
+  outline-offset: 8px;
+}
+
+.lifecycle__step {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-orbit);
+}
+
+.lifecycle__name {
+  font-size: var(--text-2xl);
+}
+
+.lifecycle__question {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 500;
+  color: var(--color-ink-soft);
+}
+
+.lifecycle__subhead {
+  margin-top: var(--space-3);
+}
+
+.lifecycle__services {
+  display: grid;
+  border-top: 1px solid var(--color-line);
+}
+
+.lifecycle__services a {
+  display: block;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-line);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.lifecycle__services a:hover {
+  color: var(--color-orbit);
+}
+
+.lifecycle__outcome {
+  margin-top: var(--space-2);
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--color-safe) 10%, var(--color-surface));
+  border-left: 3px solid var(--color-safe);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}

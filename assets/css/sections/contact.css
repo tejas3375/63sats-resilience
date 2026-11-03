@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Contact — intro + channels left, lead form right
+   ========================================================================== */
+
+.contact__inner {
+  display: grid;
+  gap: var(--space-7);
+}
+
+@media (min-width: 960px) {
+  .contact__inner {
+    grid-template-columns: 1fr 1.25fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+}
+
+.contact__intro {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.contact__channels {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.contact__channel {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-paper);
+  border-radius: var(--radius-md);
+}
+
+.contact__channel h3 {
+  font-size: var(--text-base);
+}
+
+.contact__channel p {
+  color: var(--color-ink-soft);
+}
+
+.contact__channel a {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.contact__channel--urgent {
+  background: color-mix(in srgb, var(--color-signal) 16%, var(--color-surface));
+  border-left: 3px solid var(--color-signal);
+}
+
+.contact__form {
+  padding: var(--space-6);
+  background: var(--color-paper);
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 640px) {
+  .contact__form { padding: var(--space-7); }
+}

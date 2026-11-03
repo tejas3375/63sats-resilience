@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Tabs (generic)
+   Default style is a horizontal row of underlined tabs. Sections can
+   restyle the tablist (see sections/lifecycle.css for the orbit layout).
+   ========================================================================== */
+
+.tabs__list {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.tabs__list::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs__tab {
+  flex-shrink: 0;
+  padding: var(--space-3) var(--space-4);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tabs__tab:hover {
+  color: var(--color-ink);
+}
+
+.tabs__tab[aria-selected="true"] {
+  color: var(--color-orbit);
+  border-bottom-color: var(--color-orbit);
+}
+
+.tabs__panel {
+  padding-top: var(--space-6);
+}
+
+.tabs__panel:focus-visible {
+  outline-offset: 6px;
+}

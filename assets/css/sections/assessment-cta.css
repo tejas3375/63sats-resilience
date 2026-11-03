@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Self-assessment CTA — copy + sample score bars
+   ========================================================================== */
+
+.assessment {
+  background: var(--color-orbit-tint);
+}
+
+.assessment__inner {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .assessment__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+}
+
+.assessment__content {
+  display: grid;
+  gap: var(--space-5);
+}
+
+/* Sample result card */
+
+.assessment__sample {
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-panel);
+}
+
+.assessment__sample-title {
+  margin-bottom: var(--space-5);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink-muted);
+}
+
+.assessment__bars {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.assessment__bars li {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr 2rem;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.assessment__bars li > span:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.assessment__bar {
+  height: 8px;
+  background: var(--color-paper);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.assessment__bar::after {
+  content: "";
+  display: block;
+  width: calc(var(--score) * 1%);
+  height: 100%;
+  background: var(--color-orbit);
+  border-radius: inherit;
+}
+
+.assessment__bars li.is-low .assessment__bar::after {
+  background: var(--color-signal);
+}

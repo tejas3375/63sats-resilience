@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Platform capabilities — two-column list rows + demo slot
+   ========================================================================== */
+
+.capabilities__list {
+  display: grid;
+  column-gap: var(--space-8);
+}
+
+@media (min-width: 800px) {
+  .capabilities__list { grid-template-columns: 1fr 1fr; }
+}
+
+.capabilities__item {
+  display: grid;
+  gap: var(--space-2);
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--color-line);
+}
+
+.capabilities__item p {
+  color: var(--color-ink-soft);
+  max-width: 48ch;
+}
+
+.capabilities__demo {
+  display: grid;
+  place-items: center;
+  margin-top: var(--space-7);
+  aspect-ratio: 16 / 5;
+  min-height: 200px;
+  background: var(--color-paper);
+  border-radius: var(--radius-lg);
+  color: var(--color-ink-muted);
+  font-weight: 600;
+}

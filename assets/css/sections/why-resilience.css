@@ -1,0 +1,151 @@
+/* ==========================================================================
+   Why resilience (dark band)
+   stats strip → security vs resilience table → board questions
+   ========================================================================== */
+
+/* Stats ------------------------------------------------------------------ */
+
+.why__stats {
+  display: grid;
+  gap: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+@media (min-width: 640px) {
+  .why__stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1040px) {
+  .why__stats { grid-template-columns: repeat(4, 1fr); }
+}
+
+.why__stat {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  padding-top: var(--space-4);
+  border-top: 2px solid var(--color-signal);
+}
+
+.why__value {
+  justify-self: start;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-night-text);
+}
+
+.why__label {
+  color: var(--color-night-text);
+  max-width: 28ch;
+}
+
+.why__source {
+  font-size: var(--text-xs);
+  color: var(--color-night-muted);
+}
+
+/* Comparison table ------------------------------------------------------- */
+
+.why__compare {
+  margin-bottom: var(--space-8);
+}
+
+.why__compare-title {
+  margin-bottom: var(--space-5);
+  font-size: var(--text-lg);
+}
+
+.why__table-wrap {
+  overflow-x: auto;
+}
+
+.why__table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.why__table th,
+.why__table td {
+  padding: var(--space-4) var(--space-4) var(--space-4) 0;
+  border-bottom: 1px solid var(--color-night-line);
+  vertical-align: top;
+}
+
+.why__table thead th {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--color-night-muted);
+  font-weight: 600;
+}
+
+.why__table thead th:last-child {
+  color: var(--color-night-text);
+}
+
+.why__table tbody th {
+  width: 18%;
+  font-weight: 600;
+  color: var(--color-night-muted);
+}
+
+.why__table td {
+  color: var(--color-night-muted);
+}
+
+/* The resilience column is the point of the table */
+.why__table td:last-child {
+  color: var(--color-night-text);
+  font-weight: 600;
+}
+
+/* Board questions -------------------------------------------------------- */
+
+.why__questions {
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  background: var(--color-night-raised);
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 900px) {
+  .why__questions {
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--space-5) var(--space-7);
+  }
+
+  .why__questions h3 { grid-row: span 2; }
+}
+
+.why__questions h3 {
+  font-size: var(--text-lg);
+}
+
+.why__question-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.why__question-list li {
+  padding-left: var(--space-5);
+  position: relative;
+  font-size: var(--text-md);
+  color: var(--color-night-text);
+}
+
+.why__question-list li::before {
+  content: "?";
+  position: absolute;
+  left: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-signal);
+}
+
+.why__answer {
+  color: var(--color-night-muted);
+}
