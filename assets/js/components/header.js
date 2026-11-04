@@ -5,39 +5,26 @@
    Behaviour (open/close) lives in modules/mega-menu.js.
    ========================================================================== */
 
-import { primaryNav, utilityLinks, headerCta } from "../data/navigation.js";
+import { primaryNav, headerCta } from "../data/navigation.js";
 import { site } from "../data/site.js";
 import { escapeHtml as e, renderList, chevronIcon } from "../utils/dom.js";
 
-/* Brand mark — placeholder. Replace with the official 63SATS logo file:
-   <img src="/assets/img/63sats-logo.svg" alt="63SATS" width="..." height="..."> */
 export function brandMark() {
+  const { name, homeHref, logo } = site.brand;
+
   return `
-    <a class="brand" href="${e(site.brand.homeHref)}" aria-label="${e(site.brand.name)} ${e(site.brand.product)} home">
-      <svg class="brand__mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
-        <circle cx="16" cy="16" r="5" fill="currentColor"/>
-        <ellipse cx="16" cy="16" rx="14" ry="6.5" fill="none" stroke="currentColor" stroke-width="1.5" transform="rotate(-24 16 16)"/>
-        <circle cx="28.2" cy="10.6" r="2" fill="var(--color-orbit)"/>
-      </svg>
-      <span class="brand__text">
-        <span class="brand__name">${e(site.brand.name)}</span>
-        <span class="brand__product">${e(site.brand.product)}</span>
-      </span>
+    <a class="brand" href="${e(homeHref)}" aria-label="${e(name)} home">
+      <img class="brand__logo" src="${e(logo.src)}" alt="" width="${e(logo.width)}" height="${e(logo.height)}">
     </a>`;
 }
 
 function utilityBar() {
   return `
     <div class="utility-bar">
-      <div class="container utility-bar__inner">
-        <p class="utility-bar__alert">
-          Facing an active incident?
-          <a href="${e(site.contact.incidentHotline.href)}">Call the 24×7 hotline</a>
-        </p>
-        <ul class="utility-bar__links" role="list">
-          ${renderList(utilityLinks, (link) => `<li><a href="${e(link.href)}">${e(link.label)}</a></li>`)}
-        </ul>
-      </div>
+      <p class="utility-bar__alert">
+        Facing an active incident?
+        <a href="${e(site.contact.incidentHotline.href)}">Call the 24×7 hotline</a>
+      </p>
     </div>`;
 }
 
@@ -115,9 +102,6 @@ export function renderHeader(container) {
           </ul>
           <div class="primary-nav__mobile-footer">
             <a class="button button--primary" href="${e(headerCta.href)}">${e(headerCta.label)}</a>
-            <ul class="primary-nav__utility" role="list">
-              ${renderList(utilityLinks, (link) => `<li><a href="${e(link.href)}">${e(link.label)}</a></li>`)}
-            </ul>
           </div>
         </nav>
 

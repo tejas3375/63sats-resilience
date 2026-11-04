@@ -69,6 +69,7 @@
   --header-height: 72px;
   --utility-height: 36px;
   --section-nav-height: 52px;
+  --brand-logo-height: 48px;
 
   /* Shape & depth -------------------------------------------------------- */
   --radius-sm: 4px;
@@ -82,6 +83,7 @@
   --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
   --duration-fast: 150ms;
   --duration-base: 240ms;
+  --utility-drift-duration: 24s;
 
   /* Layers --------------------------------------------------------------- */
   --z-section-nav: 40;

@@ -18,13 +18,6 @@
    63SATS catalogue before sharing externally.
    ========================================================================== */
 
-export const utilityLinks = [
-  { label: "Partners", href: "/pages/company/partners.html" },
-  { label: "Careers", href: "/pages/company/careers.html" },
-  { label: "Client login", href: "/pages/client-login.html" },
-  { label: "Contact", href: "/#contact" },
-];
-
 export const headerCta = {
   label: "Book a resilience review",
   href: "/#contact",

@@ -22,18 +22,26 @@
 /* Utility bar ------------------------------------------------------------ */
 
 .utility-bar {
+  display: flex;
+  align-items: center;
   height: var(--utility-height);
+  overflow: hidden;
   background: var(--color-ink);
   color: var(--color-night-muted);
   font-size: var(--text-xs);
 }
 
-.utility-bar__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  height: 100%;
+/* The alert drifts left to right across the bar, entering again from the left.
+   It pauses on hover and keyboard focus so the phone link stays easy to use. */
+.utility-bar__alert {
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation: utility-bar-drift var(--utility-drift-duration) linear infinite;
+}
+
+.utility-bar:hover .utility-bar__alert,
+.utility-bar__alert:focus-within {
+  animation-play-state: paused;
 }
 
 .utility-bar__alert a {
@@ -42,24 +50,14 @@
   text-underline-offset: 0.2em;
 }
 
-.utility-bar__links {
-  display: none;
-  gap: var(--space-5);
-  list-style: none;
-  padding: 0;
+@keyframes utility-bar-drift {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100vw); }
 }
 
-.utility-bar__links a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.utility-bar__links a:hover {
-  color: var(--color-night-text);
-}
-
-@media (min-width: 760px) {
-  .utility-bar__links { display: flex; }
+@media (prefers-reduced-motion: reduce) {
+  .utility-bar { justify-content: center; }
+  .utility-bar__alert { animation: none; }
 }
 
 /* Main row --------------------------------------------------------------- */
@@ -83,27 +81,12 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
-  color: var(--color-ink);
-  text-decoration: none;
   flex-shrink: 0;
 }
 
-.brand__text {
-  display: grid;
-  line-height: 1.05;
-}
-
-.brand__name {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-
-.brand__product {
-  font-size: var(--text-xs);
-  color: var(--color-ink-muted);
+.brand__logo {
+  width: auto;
+  height: var(--brand-logo-height);
 }
 
 /* Primary nav — desktop -------------------------------------------------- */
@@ -234,19 +217,6 @@
     margin-top: auto;
     padding: var(--space-6) var(--container-gutter);
     background: var(--color-paper);
-  }
-
-  .primary-nav__utility {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-3) var(--space-5);
-    list-style: none;
-    padding: 0;
-    font-size: var(--text-sm);
-  }
-
-  .primary-nav__utility a {
-    color: var(--color-ink-soft);
   }
 
   body.has-drawer-open {

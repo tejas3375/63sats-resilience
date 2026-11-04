@@ -19,11 +19,6 @@
   text-underline-offset: 0.2em;
 }
 
-.site-footer .brand,
-.site-footer .brand__product {
-  color: var(--color-night-text);
-}
-
 .site-footer__top {
   display: grid;
   gap: var(--space-7);

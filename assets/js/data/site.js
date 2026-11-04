@@ -5,14 +5,14 @@
 
 export const site = {
   brand: {
-    name: "63SATS",
-    product: "Cyber Resilience",
+    name: "63SATS Cybertech",
     homeHref: "/",
+    logo: { src: "/assets/img/63sats-cybertech-logo.png", width: 603, height: 288 },
   },
 
   contact: {
     salesPhone: { label: "+91 00000 00000", href: "tel:+910000000000" },        // placeholder
-    incidentHotline: { label: "+91 00000 00001", href: "tel:+910000000001" },   // placeholder, 24×7
+    incidentHotline: { label: "+91 22 6686 3330", href: "tel:+912266863330" },  // 24×7
     email: { label: "resilience@63sats.com", href: "mailto:resilience@63sats.com" }, // placeholder
     hours: "Monday to Friday, 9:30 am to 6:30 pm IST",
   },

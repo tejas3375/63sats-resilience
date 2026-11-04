@@ -88,8 +88,8 @@ Search the code for `TODO(` to find every item. The main ones:
   figures with sources. Unverified values are outlined in amber via the `.placeholder`
   class. Add `class="hide-placeholders"` to `<html>` to hide the outlines for a demo.
 - **Client logos**, **heritage claims** and **hero proof points** — confirm with 63SATS.
-- **Phone numbers and email** in `site.js` and in the contact section of `index.html`.
-- **Logo** — the brand mark in `components/header.js` and `img/favicon.svg` are placeholders.
+- **Sales phone number and email** in `site.js` and in the contact section of `index.html`.
+- **Favicon** — `img/favicon.svg` is a placeholder.
 - **Service list** in `navigation.js` — validate against the current 63SATS catalogue.
 - **Form submission** — `submitLead()` currently logs to the console.
 
