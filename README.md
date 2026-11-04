@@ -84,9 +84,9 @@ Links in the menus point to planned page paths; they return 404 until each page 
 
 Search the code for `TODO(` to find every item. The main ones:
 
-- **Statistics** in the "Why resilience" section and **outcome metrics** — add verified
-  figures with sources. Unverified values are outlined in amber via the `.placeholder`
-  class. Add `class="hide-placeholders"` to `<html>` to hide the outlines for a demo.
+- **Outcome metrics** — add verified figures with sources. Unverified values are outlined
+  in amber via the `.placeholder` class. Add `class="hide-placeholders"` to `<html>` to
+  hide the outlines for a demo.
 - **Client logos**, **heritage claims** and **hero proof points** — confirm with 63SATS.
 - **Sales phone number and email** in `site.js` and in the contact section of `index.html`.
 - **Favicon** — `img/favicon.svg` is a placeholder.
