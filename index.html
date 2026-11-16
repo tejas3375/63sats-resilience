@@ -58,23 +58,68 @@
           </ul>
         </div>
 
-        <!-- Decorative orbit motif (the name 63SATS references Jupiter's 63 moons) -->
-        <figure class="hero__visual" aria-hidden="true">
-          <svg viewBox="0 0 400 400" class="hero-orbit">
-            <circle class="hero-orbit__ring" cx="200" cy="200" r="170"/>
-            <circle class="hero-orbit__ring hero-orbit__ring--inner" cx="200" cy="200" r="118"/>
-            <circle class="hero-orbit__core" cx="200" cy="200" r="62"/>
-            <text class="hero-orbit__label" x="200" y="196" text-anchor="middle">Your</text>
-            <text class="hero-orbit__label" x="200" y="216" text-anchor="middle">organisation</text>
-            <g class="hero-orbit__satellites">
-              <circle cx="200" cy="30"  r="9"/>
-              <circle cx="347" cy="115" r="9"/>
-              <circle cx="347" cy="285" r="9"/>
-              <circle cx="200" cy="370" r="9"/>
-              <circle cx="53"  cy="285" r="9"/>
-              <circle cx="53"  cy="115" r="9"/>
+        <!-- Resilience cycle: four stages around three foundations and the organisation.
+             Colours come from CSS classes in sections/hero.css. -->
+        <figure class="hero__visual hero__visual--framework">
+          <svg class="cycle" viewBox="-100 0 800 600" role="img" aria-labelledby="cycle-title cycle-desc">
+            <title id="cycle-title">The cyber resilience cycle</title>
+            <desc id="cycle-desc">Anticipate, Withstand, Recover and Adapt form a continuous cycle around your organisation, supported by enterprisewide governance, cyber risk management and a minimum viable organisation.</desc>
+            <defs>
+              <marker id="cycle-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
+                <path class="cycle__arrowhead" d="M0 0 L10 5 L0 10 Z"/>
+              </marker>
+              <path id="cycle-text-gov"  d="M197.6 228.3 A125 125 0 0 1 402.4 228.3"/>
+              <path id="cycle-text-risk" d="M311.8 434.5 A135 135 0 0 0 422.4 242.9"/>
+              <path id="cycle-text-mvo"  d="M177.6 242.9 A135 135 0 0 0 288.2 434.5"/>
+            </defs>
+
+            <!-- Outer cycle, clockwise -->
+            <g class="cycle__arcs" marker-end="url(#cycle-arrow)">
+              <path d="M188.5 98.8 A230 230 0 0 1 411.5 98.8"/>
+              <path d="M501.2 188.5 A230 230 0 0 1 501.2 411.5"/>
+              <path d="M411.5 501.2 A230 230 0 0 1 188.5 501.2"/>
+              <path d="M98.8 411.5 A230 230 0 0 1 98.8 188.5"/>
             </g>
-            <circle class="hero-orbit__threat" cx="318" cy="200" r="6"/>
+
+            <!-- Foundations ring -->
+            <circle class="cycle__ring" cx="300" cy="300" r="130"/>
+            <g class="cycle__dividers">
+              <line x1="217.7" y1="252.5" x2="157.1" y2="217.5"/>
+              <line x1="382.3" y1="252.5" x2="442.9" y2="217.5"/>
+              <line x1="300" y1="395" x2="300" y2="465"/>
+            </g>
+            <text class="cycle__ring-label"><textPath href="#cycle-text-gov" startOffset="50%" text-anchor="middle">Enterprisewide governance</textPath></text>
+            <text class="cycle__ring-label"><textPath href="#cycle-text-risk" startOffset="50%" text-anchor="middle">Cyber risk management</textPath></text>
+            <text class="cycle__ring-label"><textPath href="#cycle-text-mvo" startOffset="50%" text-anchor="middle">Minimum viable organisation</textPath></text>
+
+            <!-- Core -->
+            <circle class="cycle__core" cx="300" cy="300" r="88"/>
+            <text class="cycle__core-label" x="300" y="294" text-anchor="middle">Your</text>
+            <text class="cycle__core-label" x="300" y="318" text-anchor="middle">organisation</text>
+
+            <!-- Stage nodes with icons -->
+            <g class="cycle__node" transform="translate(137.4 137.4)">
+              <circle r="44"/>
+              <g class="cycle__icon"><circle r="15"/><circle r="7"/><path d="M0 0 L11 -11"/></g>
+            </g>
+            <g class="cycle__node" transform="translate(462.6 137.4)">
+              <circle r="44"/>
+              <g class="cycle__icon"><path d="M0 -16 L13 -10 V1 C13 9 7 14 0 17 C-7 14 -13 9 -13 1 V-10 Z"/></g>
+            </g>
+            <g class="cycle__node" transform="translate(462.6 462.6)">
+              <circle r="44"/>
+              <g class="cycle__icon"><path d="M13 3 A13 13 0 1 1 9 -9"/><path d="M10 -17 V-8 H1"/></g>
+            </g>
+            <g class="cycle__node" transform="translate(137.4 462.6)">
+              <circle r="44"/>
+              <g class="cycle__icon"><path d="M-13 14 V2 C-13 -6 -6 -10 2 -10 H13"/><path d="M6 -17 L13 -10 L6 -3"/><path d="M-13 -14 L-5 -6"/></g>
+            </g>
+
+            <!-- Stage labels -->
+            <text class="cycle__stage" x="79"  y="146" text-anchor="end">Anticipate</text>
+            <text class="cycle__stage" x="521" y="146">Withstand</text>
+            <text class="cycle__stage" x="521" y="471">Recover</text>
+            <text class="cycle__stage" x="79"  y="471" text-anchor="end">Adapt</text>
           </svg>
         </figure>
       </div>
@@ -88,7 +133,9 @@
       <div class="container">
         <ul class="section-nav__list" role="list" data-section-nav-scroller>
           <li><a class="section-nav__link" href="#why-resilience">Why resilience</a></li>
+          <li><a class="section-nav__link" href="#framework">Framework</a></li>
           <li><a class="section-nav__link" href="#lifecycle">Lifecycle</a></li>
+          <li><a class="section-nav__link" href="#approach">Approach</a></li>
           <li><a class="section-nav__link" href="#capabilities">Platform</a></li>
           <li><a class="section-nav__link" href="#outcomes">Outcomes</a></li>
           <li><a class="section-nav__link" href="#industries">Industries</a></li>
@@ -175,6 +222,21 @@
                   <td>Point products for individual risks</td>
                   <td>One programme from governance through recovery</td>
                 </tr>
+                <tr>
+                  <th scope="row">Priorities</th>
+                  <td>Every asset protected to the same standard</td>
+                  <td>Critical business services first, ranked by a business impact analysis</td>
+                </tr>
+                <tr>
+                  <th scope="row">Proof</th>
+                  <td>Controls deployed and policies on file</td>
+                  <td>Defences tested against real attack paths, and recovery rehearsed</td>
+                </tr>
+                <tr>
+                  <th scope="row">Board message</th>
+                  <td>"Our top cyber risks are…"</td>
+                  <td>"Our plan to keep operating through an attack is…"</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -194,7 +256,150 @@
     </section>
 
     <!-- =====================================================================
-         2. RESILIENCE LIFECYCLE — end-to-end coverage (signature section)
+         2. FRAMEWORK — the resilience cycle, layer by layer
+         Outer cycle (4 stages) → foundations (3) → enablers.
+         Service links map to our catalogue.
+         ===================================================================== -->
+    <section class="section section--surface framework" id="framework" aria-labelledby="framework-title">
+      <div class="container">
+        <header class="section-header section-header--split">
+          <h2 id="framework-title">Built around Anticipate, Withstand, Recover, Adapt</h2>
+          <p class="lead">
+            Resilience moves the goal from stopping every attack to keeping the business running through
+            one. We organise every engagement around these layers.
+          </p>
+        </header>
+
+        <!-- Layer 1: the continuous cycle -->
+        <div class="framework__layer">
+          <div class="framework__layer-head">
+            <p class="framework__layer-tag">Layer 1</p>
+            <h3>A continuous cycle, before, during and after an attack</h3>
+          </div>
+
+          <ol class="framework__stages" role="list">
+            <li class="framework__stage">
+              <p class="framework__stage-step">01</p>
+              <h4 class="framework__stage-name">Anticipate</h4>
+              <p class="framework__stage-goal">Know which threats are most likely to hit your critical systems, and prepare for them before they arrive.</p>
+              <h5 class="framework__subhead">Capabilities</h5>
+              <ul class="framework__caps" role="list">
+                <li>Cyber risk intelligence and monitoring</li>
+                <li>Continuous threat exposure management</li>
+                <li>Threat modelling, including AI systems</li>
+                <li>Red, blue and purple team exercises</li>
+                <li>Blast-radius mapping of critical assets</li>
+              </ul>
+              <h5 class="framework__subhead">How 63SATS helps</h5>
+              <ul class="framework__services" role="list">
+                <li><a href="/pages/services/threat-intelligence.html">Threat intelligence</a></li>
+                <li><a href="/pages/services/risk-assessment.html">Cyber risk assessment</a></li>
+                <li><a href="/pages/services/red-team.html">Red team assessment</a></li>
+              </ul>
+            </li>
+
+            <li class="framework__stage">
+              <p class="framework__stage-step">02</p>
+              <h4 class="framework__stage-name">Withstand</h4>
+              <p class="framework__stage-goal">Keep critical services running while an attack is under way, and stop it spreading.</p>
+              <h5 class="framework__subhead">Capabilities</h5>
+              <ul class="framework__caps" role="list">
+                <li>Layered defence and zero trust</li>
+                <li>Network and identity segmentation</li>
+                <li>Early detection with automated containment</li>
+                <li>Tested, isolated backups</li>
+                <li>Incident response retainer on standby</li>
+              </ul>
+              <h5 class="framework__subhead">How 63SATS helps</h5>
+              <ul class="framework__services" role="list">
+                <li><a href="/pages/services/managed-soc.html">Managed SOC, 24×7</a></li>
+                <li><a href="/pages/services/endpoint-protection.html">Endpoint and malware protection</a></li>
+                <li><a href="/pages/services/cloud-security.html">Cloud security</a></li>
+              </ul>
+            </li>
+
+            <li class="framework__stage">
+              <p class="framework__stage-step">03</p>
+              <h4 class="framework__stage-name">Recover</h4>
+              <p class="framework__stage-goal">Restore operations quickly and safely, most critical services first, without destroying the evidence.</p>
+              <h5 class="framework__subhead">Capabilities</h5>
+              <ul class="framework__caps" role="list">
+                <li>Clean-room recovery from trusted images</li>
+                <li>Identity-first restoration of privileged access</li>
+                <li>Tier-ordered recovery against agreed downtime limits</li>
+                <li>Recovery and forensics in parallel</li>
+                <li>Business continuity plans and crisis communications</li>
+              </ul>
+              <h5 class="framework__subhead">How 63SATS helps</h5>
+              <ul class="framework__services" role="list">
+                <li><a href="/pages/services/incident-response.html">Incident response</a></li>
+                <li><a href="/pages/services/digital-forensics.html">Digital forensic investigation</a></li>
+                <li><a href="/pages/services/business-continuity.html">Business continuity planning</a></li>
+              </ul>
+            </li>
+
+            <li class="framework__stage">
+              <p class="framework__stage-step">04</p>
+              <h4 class="framework__stage-name">Adapt</h4>
+              <p class="framework__stage-goal">Turn every incident and exercise into a stronger programme, so the same gap does not open twice.</p>
+              <h5 class="framework__subhead">Capabilities</h5>
+              <ul class="framework__caps" role="list">
+                <li>Post-incident reviews that lead to actual fixes</li>
+                <li>Budget and staff moved to where incidents showed need</li>
+                <li>Retiring controls that no longer add value</li>
+                <li>Recovery rehearsals for regulators and customers</li>
+                <li>Scanning for upcoming regulation</li>
+              </ul>
+              <h5 class="framework__subhead">How 63SATS helps</h5>
+              <ul class="framework__services" role="list">
+                <li><a href="/pages/services/post-incident-hardening.html">Post-incident hardening</a></li>
+                <li><a href="/pages/services/crisis-simulation.html">Crisis simulation exercises</a></li>
+                <li><a href="/pages/services/grc-advisory.html">GRC and compliance advisory</a></li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Layer 2: foundations at the centre of the cycle -->
+        <div class="framework__layer">
+          <div class="framework__layer-head">
+            <p class="framework__layer-tag">Layer 2</p>
+            <h3>Three foundations hold the cycle together</h3>
+          </div>
+
+          <ul class="framework__foundations" role="list">
+            <li class="framework__foundation">
+              <h4>Enterprisewide governance</h4>
+              <p>Resilience is a shared responsibility, sponsored by the C-suite and overseen by the board. A steering committee and clear escalation lines keep oversight from slowing down a crisis response.</p>
+            </li>
+            <li class="framework__foundation">
+              <h4>Cyber risk management</h4>
+              <p>Cyber risk sits inside enterprise risk management, with an agreed risk appetite, regular scenario exercises and baseline controls mapped to NIST CSF 2.0, ISO 27001, CIS 18 or NIST 800-53.</p>
+            </li>
+            <li class="framework__foundation">
+              <h4>Minimum viable organisation</h4>
+              <p>Agree in advance the smallest set of functions the business needs to keep operating, then protect and recover those first. Everyone knows what comes first before the pressure starts.</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Layer 3: enablers that run across everything -->
+        <div class="framework__layer framework__layer--enablers">
+          <div class="framework__layer-head">
+            <p class="framework__layer-tag">Layer 3</p>
+            <h3>What makes it work across the organisation</h3>
+          </div>
+          <ul class="framework__enablers" role="list">
+            <li><strong>Cross-functional collaboration</strong> between security, IT, business continuity and enterprise risk</li>
+            <li><strong>Leadership buy-in</strong>, with resilience reported to the board in business terms</li>
+            <li><strong>A resilience culture</strong>, built into training, metrics and recognition at every level</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. RESILIENCE LIFECYCLE — end-to-end coverage (signature section)
          Orbit tabs: each button is a stage; positions set by --angle.
          Stage names follow the six functions of NIST CSF 2.0.
          ===================================================================== -->
@@ -205,6 +410,7 @@
           <p class="lead">
             Most companies stitch together separate vendors for audits, tools, monitoring and response.
             63SATS covers all six stages of the NIST Cybersecurity Framework, so nothing falls between handovers.
+            These are the controls that keep the anticipate, withstand, recover and adapt cycle running.
           </p>
         </header>
 
@@ -320,7 +526,51 @@
     </section>
 
     <!-- =====================================================================
-         3. PLATFORM CAPABILITIES
+         4. APPROACH — how an engagement runs.
+         TODO(content): confirm with 63SATS delivery.
+         ===================================================================== -->
+    <section class="section approach" id="approach" aria-labelledby="approach-title">
+      <div class="container">
+        <header class="section-header section-header--split">
+          <h2 id="approach-title">Start with what the business cannot lose</h2>
+          <p class="lead">
+            Protecting everything equally spreads budgets thin and leaves critical services exposed.
+            We begin with business impact, then test, assign and report against it.
+          </p>
+        </header>
+
+        <ol class="approach__steps" role="list">
+          <li class="approach__step">
+            <h3>Rank what matters</h3>
+            <p>We use your business impact analysis, or help the business build one, to sort systems into mission-critical, business-critical and the rest. Business owners set recovery time and recovery point objectives they can live with.</p>
+            <p class="approach__output"><strong>You get:</strong> a tiered list of critical services and a defined minimum viable organisation.</p>
+          </li>
+          <li class="approach__step">
+            <h3>Test against real attackers</h3>
+            <p>We start from the threat actors active in your sector, rank each technique as probable, plausible or possible, and test the likeliest paths in depth. Each path is scored on whether it was prevented, detected, contained and recovered from in production, not on paper.</p>
+            <p class="approach__output"><strong>You get:</strong> evidence of which defences hold, and which fail, on the attacks most likely to reach you.</p>
+          </li>
+          <li class="approach__step">
+            <h3>Make ownership explicit</h3>
+            <p>Resilience spans security, IT, business continuity, risk, legal and communications. We help you agree who is responsible, accountable, supporting, consulted and informed for each activity, so no one finds the gaps mid-incident.</p>
+            <p class="approach__output"><strong>You get:</strong> a resilience RASCI and a steering group with clear decision rights.</p>
+          </li>
+          <li class="approach__step">
+            <h3>Report in business terms</h3>
+            <p>Leadership sets the tolerance, we show what it costs to meet, and if that is too high you decide together what to accept. Each decision records the exposure before and after, the evidence, the cost and the owner.</p>
+            <p class="approach__output"><strong>You get:</strong> board reporting tied to revenue, service and regulatory outcomes, not tool counts.</p>
+          </li>
+          <li class="approach__step">
+            <h3>Rehearse and adapt</h3>
+            <p>Tabletop exercises for executives, crisis teams and technical staff, plus full recovery drills. Lessons go straight back into response plans, business continuity plans and the impact analysis itself.</p>
+            <p class="approach__output"><strong>You get:</strong> tracked time to detect, respond and recover, and a falling count of open gaps.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. PLATFORM CAPABILITIES
          ===================================================================== -->
     <section class="section section--surface capabilities" id="capabilities" aria-labelledby="capabilities-title">
       <div class="container">
@@ -366,7 +616,7 @@
     </section>
 
     <!-- =====================================================================
-         4. OUTCOMES
+         6. OUTCOMES
          ===================================================================== -->
     <section class="section outcomes" id="outcomes" aria-labelledby="outcomes-title">
       <div class="container">
@@ -402,7 +652,7 @@
     </section>
 
     <!-- =====================================================================
-         5. INDUSTRIES
+         7. INDUSTRIES
          ===================================================================== -->
     <section class="section section--surface industries" id="industries" aria-labelledby="industries-title">
       <div class="container">
@@ -548,7 +798,7 @@
     </section>
 
     <!-- =====================================================================
-         6. PROOF — why 63SATS
+         8. PROOF — why 63SATS
          ===================================================================== -->
     <section class="section proof" id="proof" aria-labelledby="proof-title">
       <div class="container">
@@ -595,7 +845,7 @@
     </section>
 
     <!-- =====================================================================
-         7. SELF-ASSESSMENT CTA
+         9. SELF-ASSESSMENT CTA
          ===================================================================== -->
     <section class="section assessment" id="assessment" aria-labelledby="assessment-title">
       <div class="container assessment__inner">
@@ -627,7 +877,7 @@
     </section>
 
     <!-- =====================================================================
-         8. RESOURCES
+         10. RESOURCES
          ===================================================================== -->
     <section class="section section--surface resources" id="resources" aria-labelledby="resources-title">
       <div class="container">
@@ -660,7 +910,7 @@
     </section>
 
     <!-- =====================================================================
-         9. FAQ — native details; same name="faq" keeps one open at a time
+         11. FAQ — native details; same name="faq" keeps one open at a time
          ===================================================================== -->
     <section class="section faq" id="faq" aria-labelledby="faq-title">
       <div class="container faq__inner">
@@ -674,6 +924,36 @@
             <summary class="accordion__summary">What is cyber resilience?</summary>
             <div class="accordion__body">
               <p>It is your organisation's ability to keep delivering critical services during and after a cyber incident. It covers preventing attacks, but also detecting them quickly, limiting the damage and recovering in a planned way.</p>
+            </div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">What do anticipate, withstand, recover and adapt mean?</summary>
+            <div class="accordion__body">
+              <p>They are the four stages of a continuous resilience cycle: anticipate threats, withstand attacks, recover quickly and adapt from what you learn. It rests on three foundations: enterprisewide governance, cyber risk management and a defined minimum viable organisation. <a class="link" href="#framework">See how we apply each layer</a>.</p>
+            </div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">How does it relate to the NIST Cybersecurity Framework?</summary>
+            <div class="accordion__body">
+              <p>They work together. NIST CSF 2.0 (govern, identify, protect, detect, respond, recover) defines the security controls you need. The resilience cycle asks whether those controls keep the business running during and after an attack. We map your controls to NIST CSF and measure outcomes against the resilience cycle.</p>
+            </div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">What is a minimum viable organisation?</summary>
+            <div class="accordion__body">
+              <p>The smallest set of business functions you need to keep operating through a serious cyber crisis. Agreeing it in advance, usually from a business impact analysis, tells every team what to protect and restore first, so those decisions are not made under pressure.</p>
+            </div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Why start with a business impact analysis?</summary>
+            <div class="accordion__body">
+              <p>Without one, response plans follow technical priorities rather than business ones, and recovery targets are often unrealistic. A business impact analysis ranks critical processes, maps their dependencies and sets recovery time and recovery point objectives agreed with the business. Security investment can then follow that ranking.</p>
+            </div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Should our CISO own business continuity and disaster recovery?</summary>
+            <div class="accordion__body">
+              <p>Usually not on their own, even though more security leaders are being asked to. Security is best placed to own cyber controls, monitoring and cyber incident response. Business continuity often fits better with operations or enterprise risk, and IT disaster recovery with infrastructure teams. A shared RASCI makes the split explicit.</p>
             </div>
           </details>
           <details class="accordion__item" name="faq">
@@ -723,7 +1003,7 @@
     </section>
 
     <!-- =====================================================================
-         10. CONTACT — lead form + channels
+         12. CONTACT — lead form + channels
          ===================================================================== -->
     <section class="section section--surface contact" id="contact" aria-labelledby="contact-title">
       <div class="container contact__inner">

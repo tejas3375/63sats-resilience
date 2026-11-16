@@ -27,7 +27,9 @@
 /* Sections (home page, in page order) ----------------------------------- */
 @import url("sections/hero.css");
 @import url("sections/why-resilience.css");
+@import url("sections/framework.css");
 @import url("sections/lifecycle.css");
+@import url("sections/approach.css");
 @import url("sections/capabilities.css");
 @import url("sections/outcomes.css");
 @import url("sections/industries.css");

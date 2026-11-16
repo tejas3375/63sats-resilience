@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Approach — five numbered steps, BIA first
+   ========================================================================== */
+
+.approach__steps {
+  display: grid;
+  gap: var(--space-6);
+  counter-reset: approach;
+}
+
+@media (min-width: 760px) {
+  .approach__steps { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1100px) {
+  .approach__steps { grid-template-columns: repeat(3, 1fr); }
+}
+
+.approach__step {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 2px solid var(--color-orbit);
+  counter-increment: approach;
+}
+
+.approach__step h3 {
+  font-size: var(--text-md);
+}
+
+.approach__step h3::before {
+  content: counter(approach, decimal-leading-zero);
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+}
+
+.approach__step p {
+  color: var(--color-ink-soft);
+}
+
+.approach__output {
+  font-size: var(--text-sm);
+}
+
+.approach__output strong {
+  color: var(--color-safe);
+}

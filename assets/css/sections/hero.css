@@ -54,58 +54,92 @@
   font-size: var(--text-base);
 }
 
-/* Orbit illustration ----------------------------------------------------- */
+/* Resilience cycle illustration --------------------------------------- */
+/* The cycle carries the section's message, so it gets the wider column. */
+
+@media (min-width: 960px) {
+  .hero__inner:has(.hero__visual--framework) {
+    grid-template-columns: 1fr 1.3fr;
+    gap: var(--space-6);
+  }
+}
 
 .hero__visual {
+  width: 100%;
+  max-width: 680px;
   justify-self: center;
-  width: min(100%, 440px);
 }
 
-.hero-orbit__ring {
+.cycle {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.cycle__arcs path {
   fill: none;
-  stroke: var(--color-line-strong);
-  stroke-width: 1.2;
-  stroke-dasharray: 2 6;
+  stroke: var(--color-orbit);
+  stroke-opacity: 0.35;
+  stroke-width: 12;
+  stroke-linecap: round;
 }
 
-.hero-orbit__ring--inner {
-  stroke: var(--color-line);
-  stroke-dasharray: none;
+.cycle__arrowhead {
+  fill: var(--color-orbit);
+  fill-opacity: 0.6;
 }
 
-.hero-orbit__core {
-  fill: var(--color-ink);
+.cycle__ring {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 70;
 }
 
-.hero-orbit__label {
+.cycle__dividers line {
+  stroke: var(--color-paper);
+  stroke-width: 3;
+}
+
+.cycle__ring-label {
   fill: var(--color-night-text);
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 15px;
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-.hero-orbit__satellites circle {
+.cycle__core {
+  fill: var(--color-orbit-tint);
+}
+
+.cycle__core-label {
+  fill: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.cycle__node > circle {
   fill: var(--color-orbit);
 }
 
-.hero-orbit__satellites {
-  transform-origin: 200px 200px;
-  animation: orbit-spin 90s linear infinite;
+.cycle__icon,
+.cycle__icon * {
+  fill: none;
+  stroke: var(--color-surface);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-/* A single amber dot on the inner ring stands for an incoming threat */
-.hero-orbit__threat {
-  fill: var(--color-signal);
-}
-
-@keyframes orbit-spin {
-  to { transform: rotate(360deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-orbit__satellites { animation: none; }
+.cycle__stage {
+  fill: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
 }
 
 @media (max-width: 959.98px) {
-  .hero__visual { width: min(70%, 320px); }
+  .hero__visual { max-width: 520px; }
 }

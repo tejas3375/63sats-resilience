@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Framework — the resilience cycle, layer by layer
+   Layer 1: four stage cards → Layer 2: three foundations →
+   Layer 3: enablers strip
+   ========================================================================== */
+
+.framework__layer {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.framework__layer + .framework__layer {
+  margin-top: var(--space-8);
+}
+
+.framework__layer-head {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.framework__layer-tag {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-orbit);
+}
+
+.framework__layer-head h3 {
+  font-size: var(--text-lg);
+}
+
+/* Layer 1: stages -------------------------------------------------------- */
+
+.framework__stages {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .framework__stages { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1100px) {
+  .framework__stages { grid-template-columns: repeat(4, 1fr); }
+}
+
+.framework__stage {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-paper);
+  border-top: 3px solid var(--color-orbit);
+  border-radius: var(--radius-md);
+}
+
+.framework__stage-step {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-ink-muted);
+}
+
+.framework__stage-name {
+  font-size: var(--text-xl);
+}
+
+.framework__stage-goal {
+  color: var(--color-ink-soft);
+}
+
+.framework__subhead {
+  margin-top: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+.framework__caps {
+  display: grid;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.framework__caps li {
+  position: relative;
+  padding-left: var(--space-4);
+}
+
+.framework__caps li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-orbit);
+}
+
+.framework__services {
+  display: grid;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.framework__services a {
+  color: var(--color-orbit);
+  font-weight: 600;
+  text-underline-offset: 0.2em;
+}
+
+.framework__services a:hover {
+  color: var(--color-orbit-deep);
+}
+
+/* Layer 2: foundations --------------------------------------------------- */
+
+.framework__foundations {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 900px) {
+  .framework__foundations { grid-template-columns: repeat(3, 1fr); }
+}
+
+.framework__foundation {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-night);
+  color: var(--color-night-text);
+  border-radius: var(--radius-md);
+}
+
+.framework__foundation h4 {
+  font-size: var(--text-md);
+}
+
+.framework__foundation p {
+  color: var(--color-night-muted);
+}
+
+/* Layer 3: enablers ------------------------------------------------------ */
+
+.framework__enablers {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 900px) {
+  .framework__enablers { grid-template-columns: repeat(3, 1fr); }
+}
+
+.framework__enablers li {
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  color: var(--color-ink-soft);
+}
+
+.framework__enablers strong {
+  color: var(--color-ink);
+}
