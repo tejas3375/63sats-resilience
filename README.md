@@ -24,7 +24,7 @@ Any static server works (`npx serve`, VS Code Live Server, nginx).
 ├── pages/
 │   └── _page-template.html       Copy this to start any new page
 ├── assets/
-│   ├── img/                      Logos, favicon, imagery
+│   ├── img/                      Logos and imagery
 │   ├── css/
 │   │   ├── main.css              Entry point — imports everything in order
 │   │   ├── base/                 tokens, reset, typography, layout, utilities
@@ -89,7 +89,7 @@ Search the code for `TODO(` to find every item. The main ones:
   hide the outlines for a demo.
 - **Client logos**, **heritage claims** and **hero proof points** — confirm with 63SATS.
 - **Sales phone number and email** in `site.js` and in the contact section of `index.html`.
-- **Favicon** — `img/favicon.svg` is a placeholder.
+- **Favicon** — none yet; add one to `assets/img/` and a `<link rel="icon">` in each page head.
 - **Service list** in `navigation.js` — validate against the current 63SATS catalogue.
 - **Form submission** — `submitLead()` currently logs to the console.
 
