@@ -10,10 +10,11 @@
 import { renderHeader } from "./components/header.js";
 import { renderFooter } from "./components/footer.js";
 
-import { initMegaMenu } from "./modules/mega-menu.js";
+import { initNavDrawer } from "./modules/nav-drawer.js";
 import { initSectionNav } from "./modules/section-nav.js";
 import { initAllTabs } from "./modules/tabs.js";
 import { initAllLeadForms } from "./modules/lead-form.js";
+import { initNewsletterForm } from "./modules/newsletter-form.js";
 import { initModals } from "./modules/modal.js";
 import { initCookieBanner } from "./modules/cookie-banner.js";
 
@@ -25,9 +26,10 @@ if (header) renderHeader(header);
 if (footer) renderFooter(footer);
 
 /* 2. Behaviour ------------------------------------------------------------ */
-initMegaMenu(header);
+initNavDrawer(header);
 initSectionNav(document.querySelector("[data-section-nav]"));
 initAllTabs();
 initAllLeadForms();
+initNewsletterForm();
 initModals();
 initCookieBanner(document.querySelector("[data-cookie-banner]"));

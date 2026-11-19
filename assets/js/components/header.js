@@ -1,13 +1,13 @@
 /* ==========================================================================
    Header component
-   Renders: utility bar, brand, primary nav with mega menus, header CTA,
-   mobile menu toggle. Data comes from data/navigation.js and data/site.js.
-   Behaviour (open/close) lives in modules/mega-menu.js.
+   Renders: utility bar, brand, primary nav links, header CTA, mobile menu
+   toggle. Data comes from data/navigation.js and data/site.js.
+   Drawer behaviour (open/close on mobile) lives in modules/nav-drawer.js.
    ========================================================================== */
 
 import { primaryNav, headerCta } from "../data/navigation.js";
 import { site } from "../data/site.js";
-import { escapeHtml as e, renderList, chevronIcon } from "../utils/dom.js";
+import { escapeHtml as e, renderList } from "../utils/dom.js";
 
 export function brandMark() {
   const { name, homeHref, logo } = site.brand;
@@ -28,63 +28,13 @@ function utilityBar() {
     </div>`;
 }
 
-function megaMenuLink(link) {
-  return `
-    <li>
-      <a class="mega-menu__link" href="${e(link.href)}">
-        <span class="mega-menu__link-label">${e(link.label)}</span>
-        ${link.description ? `<span class="mega-menu__link-desc">${e(link.description)}</span>` : ""}
-      </a>
-    </li>`;
-}
-
-function megaMenu(item) {
-  const { intro, groups, feature } = item.menu;
-  const groupCount = Math.min(groups.length, 6);
-
-  return `
-    <div class="mega-menu" id="menu-${e(item.id)}" data-mega-menu hidden>
-      <div class="container mega-menu__inner">
-        <div class="mega-menu__intro">
-          <p class="mega-menu__title">${e(intro.title)}</p>
-          <p class="mega-menu__text">${e(intro.text)}</p>
-        </div>
-
-        <div class="mega-menu__groups" style="--group-count: ${groupCount}">
-          ${renderList(groups, (group) => `
-            <div class="mega-menu__group">
-              <p class="mega-menu__group-title">${e(group.title)}</p>
-              <ul class="mega-menu__list" role="list">
-                ${renderList(group.links, megaMenuLink)}
-              </ul>
-            </div>`)}
-        </div>
-
-        ${feature ? `
-          <aside class="mega-menu__feature">
-            <p class="mega-menu__feature-title">${e(feature.title)}</p>
-            <p class="mega-menu__feature-text">${e(feature.text)}</p>
-            <a class="button button--primary button--small" href="${e(feature.cta.href)}">${e(feature.cta.label)}</a>
-          </aside>` : ""}
-      </div>
-    </div>`;
-}
-
+// Marks the link for the page being viewed, so the header shows where you are
 function navItem(item) {
-  if (!item.menu) {
-    return `
-      <li class="primary-nav__item">
-        <a class="primary-nav__link" href="${e(item.href)}">${e(item.label)}</a>
-      </li>`;
-  }
+  const isCurrent = window.location.pathname === item.href;
 
   return `
     <li class="primary-nav__item">
-      <button class="primary-nav__trigger" type="button"
-              aria-expanded="false" aria-controls="menu-${e(item.id)}" data-menu-trigger>
-        ${e(item.label)} ${chevronIcon}
-      </button>
-      ${megaMenu(item)}
+      <a class="primary-nav__link" href="${e(item.href)}"${isCurrent ? ' aria-current="page"' : ""}>${e(item.label)}</a>
     </li>`;
 }
 

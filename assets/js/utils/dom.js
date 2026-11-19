@@ -32,8 +32,3 @@ export const storage = {
   },
 };
 
-/** Inline chevron used by menu triggers. */
-export const chevronIcon = `
-  <svg class="icon icon--chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-    <path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>`;

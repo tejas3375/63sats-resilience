@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Talk to an Expert | 63SATS Cyber Resilience</title>
+  <meta name="description" content="Talk to a 63SATS resilience specialist, or call the 24×7 incident hotline if you are under attack.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script type="module" src="/assets/js/main.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header data-component="site-header"></header>
+
+  <main id="main">
+
+    <!-- Talk to an Expert: intro + incident hotline left, lead form right -->
+    <section class="section section--surface contact contact-page" id="contact" aria-labelledby="page-title">
+      <div class="container contact__inner">
+
+        <div class="contact__intro contact-page__intro">
+          <h1 class="contact-page__title" id="page-title">Talk to an Expert</h1>
+          <p class="lead">
+            Tell us about your organisation and what you need help with. A resilience specialist
+            will pick it up from there.
+          </p>
+
+          <!-- Channels: value mirrors assets/js/data/site.js (TODO: keep in sync) -->
+          <ul class="contact__channels" role="list">
+            <li class="contact__channel contact__channel--urgent">
+              <h2>Under attack right now?</h2>
+              <p>Call the 24×7 incident hotline: <a href="tel:+912266863330">+91 22 6686 3330</a></p>
+            </li>
+          </ul>
+        </div>
+
+        <form class="form contact__form" data-lead-form="contact-section" novalidate>
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="lead-name">Full name</label>
+              <input class="field__control" id="lead-name" name="name" type="text" autocomplete="name" required>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="lead-org">Organisation</label>
+              <input class="field__control" id="lead-org" name="organisation" type="text" autocomplete="organization" required>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="lead-email">Work email</label>
+              <input class="field__control" id="lead-email" name="email" type="email" autocomplete="email" required>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="lead-phone">Mobile number</label>
+              <input class="field__control" id="lead-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" pattern="[0-9]{10}" required>
+              <p class="field__hint">10 digits, without +91</p>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="lead-industry">Industry</label>
+              <select class="field__control" id="lead-industry" name="industry" required>
+                <option value="">Select your industry</option>
+                <option>Banking and financial services</option>
+                <option>Government and PSU</option>
+                <option>Healthcare</option>
+                <option>Manufacturing</option>
+                <option>GCC or IT services</option>
+                <option>Other</option>
+              </select>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="lead-size">Organisation size</label>
+              <select class="field__control" id="lead-size" name="size" required>
+                <option value="">Select size</option>
+                <option>Fewer than 50</option>
+                <option>50 to 249</option>
+                <option>250 to 999</option>
+                <option>1,000 to 4,999</option>
+                <option>5,000 or more</option>
+              </select>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="lead-need">What do you need help with?</label>
+            <select class="field__control" id="lead-need" name="need" required>
+              <option value="">Choose the closest match</option>
+              <option>Understand where we stand</option>
+              <option>Meet a regulatory requirement</option>
+              <option>24×7 monitoring and response</option>
+              <option>Recover from a recent incident</option>
+              <option>Not sure yet</option>
+            </select>
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="lead-message">Anything else we should know? <span class="field__optional">(optional)</span></label>
+            <textarea class="field__control" id="lead-message" name="message" rows="4"></textarea>
+          </div>
+
+          <div class="field field--check">
+            <input id="lead-consent" name="consent" type="checkbox" required>
+            <label for="lead-consent">I agree that 63SATS may contact me about this request, as described in the <a class="link" href="/pages/legal/privacy.html">privacy policy</a>.</label>
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+
+          <div class="button-row">
+            <button class="button button--primary" type="submit">Talk to an expert</button>
+          </div>
+          <p class="form__status" data-form-status role="status"></p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer data-component="site-footer"></footer>
+</body>
+</html>

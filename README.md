@@ -36,7 +36,7 @@ Any static server works (`npx serve`, VS Code Live Server, nginx).
 │       │   ├── navigation.js     ★ All menus, footer columns, legal links
 │       │   └── site.js           ★ Brand name, phone numbers, email, social
 │       ├── components/           header.js, footer.js (render from data)
-│       ├── modules/              behaviour: mega-menu, tabs, section-nav, forms…
+│       ├── modules/              behaviour: nav-drawer, tabs, section-nav, forms…
 │       └── utils/dom.js          small shared helpers
 └── README.md
 ```
@@ -45,7 +45,7 @@ Any static server works (`npx serve`, VS Code Live Server, nginx).
 
 | To change…                         | Edit                                             |
 |------------------------------------|--------------------------------------------------|
-| Menu items, mega menus, footer     | `assets/js/data/navigation.js`                   |
+| Menu items, footer                 | `assets/js/data/navigation.js`                   |
 | Phone, email, social, brand name   | `assets/js/data/site.js`                         |
 | Colours, fonts, spacing            | `assets/css/base/tokens.css`                     |
 | A home page section's content      | `index.html` (each section has a banner comment) |
@@ -59,14 +59,22 @@ Any static server works (`npx serve`, VS Code Live Server, nginx).
 | – | Hero               | `overview`       | Headline, primary CTAs, proof points         |
 | 1 | Why resilience     | `why-resilience` | The need: stats, security vs resilience      |
 | 2 | Lifecycle          | `lifecycle`      | End-to-end coverage across six NIST stages   |
-| 3 | Platform           | `capabilities`   | What the platform brings together            |
-| 4 | Outcomes           | `outcomes`       | Business results                             |
+| 3 | Approach           | `approach`       | How an engagement runs, step by step         |
+| 4 | Platform           | `capabilities`   | What the platform brings together            |
 | 5 | Industries         | `industries`     | Sector risks and regulations (tabs)          |
 | 6 | Why 63SATS         | `proof`          | Differentiators, client logos                |
 | 7 | Self-check         | `assessment`     | Link to the resilience assessment tool       |
 | 8 | Resources          | `resources`      | Articles, whitepapers, case studies          |
-| 9 | FAQs               | `faq`            | Native accordion                             |
-| 10| Contact            | `contact`        | Lead form and contact channels               |
+
+## Top-level pages (header menu)
+
+| Page             | File                      | Holds                                            |
+|------------------|---------------------------|--------------------------------------------------|
+| How it Works     | `pages/how-it-works.html` | The resilience framework, layer by layer         |
+| Solutions        | `pages/solutions.html`    | To be built                                      |
+| Why 63SATS       | `pages/why-63sats.html`   | One team, outcomes, client and partner logos     |
+| Resources & FAQs | `pages/resources.html`    | Video, newsletter sign-up, FAQs                  |
+| Contact          | `pages/contact.html`      | "Talk to an Expert" form and incident hotline    |
 
 To add a section: add the markup to `index.html`, create `assets/css/sections/<name>.css`,
 import it in `main.css`, and add a link to the section nav in `index.html`.
